@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layar Tancap – film pilihan untuk malam ini</title>
+  <meta name="description" content="Katalog film pilihan dari Indonesia dan dunia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="masthead">
+    <h1>Layar Tancap</h1>
+    <p class="intro">Film pilihan dari Jakarta sampai Seoul. Pilih satu untuk ditonton malam ini.</p>
+
+    <div class="controls">
+      <label for="search" class="visually-hidden">Cari film</label>
+      <input id="search" type="search" placeholder="Cari judul atau sutradara" autocomplete="off">
+      <button type="button" id="random" class="primary">Pilih acak</button>
+    </div>
+
+    <div class="genres" id="genres" role="group" aria-label="Filter genre"></div>
+  </header>
+
+  <main>
+    <p class="count" id="count" aria-live="polite">Memuat film…</p>
+    <ul class="grid" id="grid"></ul>
+  </main>
+
+  <dialog id="detail" aria-labelledby="detail-title">
+    <article class="detail">
+      <div class="detail-cover" id="detail-cover"></div>
+      <div class="detail-body">
+        <ul class="detail-genres" id="detail-genres"></ul>
+        <h2 id="detail-title"></h2>
+        <p class="detail-original" id="detail-original"></p>
+        <p class="detail-synopsis" id="detail-synopsis"></p>
+        <dl class="detail-facts">
+          <div><dt>Sutradara</dt><dd id="detail-director"></dd></div>
+          <div><dt>Tahun</dt><dd id="detail-year"></dd></div>
+          <div><dt>Negara</dt><dd id="detail-country"></dd></div>
+        </dl>
+        <div class="detail-actions">
+          <button type="button" id="another" class="primary">Acak lagi</button>
+          <button type="button" id="close">Tutup</button>
+        </div>
+      </div>
+    </article>
+  </dialog>
+
+  <footer class="footer">
+    <p>Data film ada di <code>data/films.json</code>. Sampul dibuat otomatis dari warna setiap film, bukan poster asli.</p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
